@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Leaflet sample</title>
-  <link rel = "stylesheet" href = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
-  <script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+  <title>Leaflet Circle</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 </head>
 
 <body>
@@ -11,25 +11,15 @@
 <script>
   // Creating map options
   var mapOptions = {
-    center: [51.505, -0.09],
-    zoom: 10
+    center: [51.5, -0.09],
+    zoom: 7
   }
-
-  // Creating a map object
-  var map = new L.map('map', mapOptions);
+  var map = new L.map('map', mapOptions); // Creating a map object
 
   // Creating a Layer object
   var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
-  map.addLayer(layer);
-  var markerOptions = {
-    title: "MyLocation",
-    clickable: true,
-    draggable: true
-  }
-  var marker = new L.Marker([51.505, -0.09]);
-  marker.bindPopup('Welcome to London').openPopup();
-  marker.addTo(map);
-  var circleCenter = [51.505, -0.09];     // Center of the circle
+  map.addLayer(layer);        // Adding layer to the map
+  var circleCenter = [51.5, -0.09];     // Center of the circle
 
   // Circle options
   var circleOptions = {
@@ -40,10 +30,7 @@
   // Creating a circle
   var circle = L.circle(circleCenter, 50000, circleOptions);
   circle.addTo(map);     // Adding circle to the map
-
-  // Adding layer to the map
-
 </script>
 </body>
 
-</html>
+</html>>
