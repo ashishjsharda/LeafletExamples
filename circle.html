@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Leaflet Circle</title>
+  <link rel = "stylesheet" href = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+  <script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+</head>
+
+<body>
+<div id = "map" style = "width: 900px; height: 580px"></div>
+<script>
+  // Creating map options
+  var mapOptions = {
+    center: [51.5, -0.09],
+    zoom: 7
+  }
+  var map = new L.map('map', mapOptions); // Creating a map object
+
+  // Creating a Layer object
+  var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+  map.addLayer(layer);        // Adding layer to the map
+  var circleCenter = [51.5, -0.09];     // Center of the circle
+
+  // Circle options
+  var circleOptions = {
+    color: 'red',
+    fillColor: '#f03',
+    fillOpacity: 0
+  }
+  // Creating a circle
+  var circle = L.circle(circleCenter, 50000, circleOptions);
+  circle.addTo(map);     // Adding circle to the map
+</script>
+</body>
+
+</html>>
